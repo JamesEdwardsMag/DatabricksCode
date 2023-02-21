@@ -84,19 +84,6 @@ if num1 < num2:
 
 #Task 2
 # Write some code that will output to the screen if the year you were born was a leap year
-
-
-#year = 1998
-
-#if(year % 400 == 0) and (year % 4 == 0):
-    #print("Is a leap year")
-    
-#elif(year % 4 == 0) and (year % 100 != 0):
-    #print("Is a leap year")
-    
-#else:
-    #print("Is a not leap year")
-    
     
 inputYear = input("when you were born")    
 
@@ -160,4 +147,140 @@ print (total)
 
 # COMMAND ----------
 
+import random
 
+num = 3.1473
+
+#print(eval("num+1"))
+
+#print(random.randint(1,100))
+
+# COMMAND ----------
+
+
+#parameter/ argument
+def printmessage(message):
+    print(message)
+
+        
+printmessage("hello")
+printmessage("goodbye")
+
+
+
+# COMMAND ----------
+
+def square(number):
+    squarenumber = number ** 2 #squared power
+    return squarenumber
+
+numtosquare = 4
+
+answer = square(numtosquare)
+
+print("the square of "+str(numtosquare) + " is", answer)
+
+
+# COMMAND ----------
+
+#Task 3
+#lbs to Kg
+
+lbs = float(input("Enter Lbs"))
+Kg = 0.45359237
+
+Answer = lbs*Kg
+print("Kg", Answer)
+
+
+# COMMAND ----------
+
+#Task 3
+#Kg to lbs
+
+Kg = float(input("Enter Kg"))
+lbs = 2.204
+
+Answer = Kg*lbs
+print("lbs", Answer)
+
+
+# COMMAND ----------
+
+#Task 3
+#Celcius to Fahrenheit
+
+Celcius = float(input("Enter Celcius"))
+Fahrenheit = ((Celcius *9/5) +32)
+
+Answer = Fahrenheit
+print("Fahrenheit", Answer)
+
+# COMMAND ----------
+
+#Task 3
+#Fahrenheit to Celcius
+
+Fahrenheit = float(input("Enter Fahrenheit"))
+Celcius = ((Fahrenheit -32) *5/9)
+
+Answer = Celcius
+print("Celcius", Answer)
+
+# COMMAND ----------
+
+my_list = ["i", "d", "l", "e"]
+
+#del my_list[2:4]
+#my_list[1] = "n"
+#new_list = ["s"] + my_list
+#new_list.append("g")
+#print(new_list)
+
+final_list = []
+for i in my_list:
+    print(i, my_list.index(i))
+    final_list.append(my_list.index(i))
+    
+print(final_list)
+
+print(sum(final_list))
+print(len(final_list))
+
+
+# COMMAND ----------
+
+# Create a list that contains ten integers your user has typed in at the keyboard.
+user_input = []
+
+#for i in range(10):
+#    print(i)
+#    input_number = input("input a number")
+
+user_input = [1,2,3,4,5,6,7,8,9,0]
+
+# Calculate & display the sum and average of the numbers stored in this new list.
+
+input_sum = sum(user_input)
+input_average = input_sum/ len(user_input)
+
+# Display each number in turn, along with a message stating whether it is below, above or equal to the average
+
+for number in user_input:
+    print(number)
+    if number == input_average:
+        print("Number is equal to average")
+    elif number < input_average:
+        print("Number is less than average")
+    else:
+        print("Number is greater than average")
+
+# e.g. 10 is above average
+
+# COMMAND ----------
+
+Length = float(input("Enter Length"))
+Width = float(input("Enter Width"))
+
+Answer = (Length + Width)*2
+print("Perimeter =", Answer, "m")
