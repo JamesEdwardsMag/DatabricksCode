@@ -68,7 +68,7 @@ num2 = 14
 
 # COMMAND ----------
 
-#Task 1 
+#Day 1 - Task 1 
 # Ask for two numbers to be input, then display the larger of the two. 
 
 num1 = 50
@@ -123,7 +123,7 @@ print("welcome")
 
 # COMMAND ----------
 
-#Task 3 
+#Day 2 - Task 1 
 #Ask the user to enter a series of numbers
 
 #Create a total of adding each number to the last
@@ -283,4 +283,97 @@ Length = float(input("Enter Length"))
 Width = float(input("Enter Width"))
 
 Answer = (Length + Width)*2
-print("Perimeter =", Answer, "m")
+print("Perimeter =", Answer,"m")
+
+# COMMAND ----------
+
+x = "yes"
+while x == "yes":
+    Roll = random.randint(1,6)
+    print(Roll)
+    
+    if Roll == 1:
+        print(" _____ ")
+        print("|     |")
+        print("|  0  |")
+        print("|     |")
+        print(" ----- ")
+        
+    if Roll == 2:
+        print(" _____ ")
+        print("|0    |")
+        print("|     |")
+        print("|    0|")
+        print(" ----- ")
+        
+    if Roll == 3:
+        print(" _____ ")
+        print("|0    |")
+        print("|  0  |")
+        print("|    0|")
+        print(" ----- ")
+   
+    if Roll == 4:
+        print(" _____ ")
+        print("|0   0|")
+        print("|     |")
+        print("|0   0|")
+        print(" ----- ")
+        
+    if Roll == 5:
+        print(" _____ ")
+        print("|0   0|")
+        print("|  0  |")
+        print("|0   0|")
+        print(" ----- ")
+        
+    if Roll == 6:
+        print(" _____ ")
+        print("|0 0 0|")
+        print("|     |")
+        print("|0 0 0|")
+        print(" ----- ")
+   
+    x=input("Roll again? Type yes. Or type no to exit:")
+    print("\n")
+    
+
+# COMMAND ----------
+
+#Day 3 - Task 1
+
+x = "yes"
+while x == "yes":
+    Roll = random.randint(1,6)
+    print(Roll)
+    
+    x=input("Roll again? Type yes or type no to exit:")
+    print("\n")
+
+    
+
+# COMMAND ----------
+
+#Day 3 - Task 2
+
+import random
+num = random.randint(0,10)
+print (random)
+
+
+while guess != num:
+    guess = input("guess the number")
+    guess = int(guess)
+            
+    if guess == num:
+             print("Good guess!")
+             
+               
+    elif guess < num:
+              print("Higher...\n") 
+                    
+    else:
+        print("Lower...\n")
+
+         
+
