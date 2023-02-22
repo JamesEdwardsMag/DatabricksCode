@@ -287,6 +287,8 @@ print("Perimeter =", Answer,"m")
 
 # COMMAND ----------
 
+#Day 3 - Task 1
+
 x = "yes"
 while x == "yes":
     Roll = random.randint(1,6)
@@ -357,23 +359,17 @@ while x == "yes":
 #Day 3 - Task 2
 
 import random
-num = random.randint(0,10)
-print (random)
-
+num = random.randint(0,100)
 
 while guess != num:
-    guess = input("guess the number")
-    guess = int(guess)
-            
+    guess =int(input("Guess the number"))
+    
     if guess == num:
-             print("Good guess!")
-             
-               
+           print("Good guess!")
+                            
     elif guess < num:
-              print("Higher...\n") 
+           print("Higher...") 
                     
     else:
-        print("Lower...\n")
-
-         
-
+           print("Lower...")
+  
