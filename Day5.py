@@ -277,3 +277,31 @@ for i in range(len(labelsUn)):
     
     #Read back file to make sure everything works
     display(spark.read.csv("dbfs:/FileStore/tables/irisTest/" + str(species[i])))
+
+# COMMAND ----------
+
+# DBTITLE 1,Matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+# COMMAND ----------
+
+#Basic figure
+
+y = np.linspace(-1,1,5) #5 equally spaced numbers within the given range (-1, -0.5, 0, 0.5, 1)
+x = np.arange(5) 
+
+fig = plt.figure()
+ax = fig.subplots()
+y2 = np.linspace(-2, 2, 5)
+
+line1 = ax.plot(x,y)
+line2 = ax.plot(x, y2)
+
+# COMMAND ----------
+
+number_rows = 3
+number_columns = 2
+fig2 = plt.figure()
+ax2= fig2.subplots(number_rows, number_columns)
+ax2[2,1].plot(x,y)
