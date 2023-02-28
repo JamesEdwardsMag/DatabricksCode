@@ -365,3 +365,128 @@ ax[1].axvline(0.5, color='cyan', linewidth=10)
 ax[1].axvline(0.6, linestyle=':', ymin=0.25, ymax=0.75, color='orchid')
                                                #red, green, blue, transparent
 ax[1].axvline(0.7, ymin=0.25, ymax=0.75, color=(0.1, 0.2, 0.5, 0.3))
+
+
+
+# Set x-axis and y-axis limits
+ax[0].set_ylim([0.1, 0.9])
+ax[1].set_xlim([0.1, 0.9])
+
+# Set title to figure and subplots
+fig.suptitle("Horizontal and vertical lines", fontsize=14)
+ax[0].set_title('Horizontal lines', fontstyle='italic')
+ax[1].set_title('Vertical lines', color='green', fontname='Arial')
+
+# COMMAND ----------
+
+x = np.array([2,4,6,7,4,2,5,7,8,9,4,2,1])
+y = np.array([7,5,4,1,6,7,8,1,9,5,9,3,5])
+
+fig, ax=plt.subplots(1,3)
+ax[0].scatter(x,y)
+ax[0].set_title('default')
+
+ax[1].scatter(x, y, 50, marker='+')
+ax[1].set_title('size=50, style = +')
+
+crosses = ax[2].scatter(x, y, 200, marker='+', linewidth=3)
+bullets = ax[2].scatter(x, y, 50, marker='o', color='black')
+bullets.set_edgecolors('red')
+bullets.set_linewidth(1.5)
+ax[2].set_title('mixed')
+
+# COMMAND ----------
+
+#3D Not very good for Data Science but useful to know
+z = np.array([0,1,4,3,5,1,2,5,7,5,9,8,5])
+fig = plt.figure()
+ax = np.array([fig.add_subplot(1,3,1, projection='3d'),
+               fig.add_subplot(1,3,2, projection='3d'),
+               fig.add_subplot(1,3,3, projection='3d')])
+
+ax[0].scatter(x, y, z)
+ax[0].set_title('default')
+
+ax[1].scatter(x, y, z, s=50, marker='+')
+ax[1].set_title('size= 50, style = +')
+
+crosses = ax[2].scatter(x, y, z, s=200, marker='+', linewidth=3)
+bullets = ax[2].scatter(x, y, z, s=50, marker='o', color='black')
+bullets.set_edgecolors('red')
+bullets.set_linewidth(1.5)
+ax[2].set_title('mixed')
+
+# COMMAND ----------
+
+#Bar Plots (Charts)
+
+#Data
+people = ["Student A", "Student B"]
+StudentA = np.array([90,50,80,40])
+StudentB = np.array([75,45,60,95])
+x = np.arange(len(StudentA))
+
+#Figure
+fig, ax = plt.subplots(1,2)
+
+#Plots
+ax[0].bar(x, StudentA, width=0.3, color='red')
+ax[1].bar(x, StudentB, width=0.3, color='gold')
+
+#Aesthetics
+for i in range(len(ax)):
+    ax[i].set_ylim([0,100])
+    ax[i].set_title(people[i])
+    ax[i].set_xlabel("Exercises")
+    ax[i].set_ylabel("Mark (%)")
+    ax[i].set_xticks([0,1,2,3])
+    ax[i].set_xticklabels(["Ex1", "Ex3", "Ex3", "Ex4"])
+    
+# Extra: fixes the subplots separation
+fig.tight_layout()
+
+# COMMAND ----------
+
+#Grouped Bar Plots (Charts)
+fig,ax = plt.subplots()
+width=0.3
+s1bars = ax.bar(x-width/2, StudentA, width, label='Student A', color='red')
+s2bars = ax.bar(x+width/2, StudentB, width, label='Student B', color='gold')
+
+# COMMAND ----------
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+people = ["Student A", "Student B"]
+StudentA = np.array([90,50,80,40])
+StudentB = np.array([75,45,60,95])
+x = np.arange(len(StudentA))
+
+fig, ax = plt.subplots()
+width=0.3
+
+s1bars = ax.bar(x-width/2, StudentA, width, label='Student A')
+s2bars = ax.bar(x+width/2, StudentB, width, label='Student B')
+
+#Task
+ax.set_ylim([0,100])
+ax.set_title("Student Performance")
+ax.set_xlabel("Exercises")
+ax.set_ylabel("Mark (%)")
+ax.set_xticks([0,1,2,3])
+ax.set_xticklabels(["Ex1", "Ex3", "Ex3", "Ex4"])
+ax.legend()
+
+for i in range(len(StudentA)):
+    s1bars[i].set_linewidth(3.5)
+    s2bars[i].set_linewidth(3.5)
+    if StudentA[i] < 50:
+         s1bars[i].set_edgecolor('red')
+    if StudentB[i] < 50:  
+         s2bars[i].set_edgecolor('red')
+        
+
+# COMMAND ----------
+
+
