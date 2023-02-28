@@ -300,8 +300,68 @@ line2 = ax.plot(x, y2)
 
 # COMMAND ----------
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 number_rows = 3
 number_columns = 2
 fig2 = plt.figure()
 ax2= fig2.subplots(number_rows, number_columns)
+ax2[0,1].plot(x,y)
 ax2[2,1].plot(x,y)
+
+#Graph Coordinates
+#0,1
+#1,1
+#2,1
+
+# COMMAND ----------
+
+y1 = np.arange(0,110,10)
+y2 = np.random.random(11)
+x = np.arange(11)
+
+fig, ax = plt.subplots(2,2)
+ax[0,0].plot(x,y1)
+ax[0,0].set_title("Title")
+ax[0,0].set_xlabel("Hi")
+ax[0,0].set_ylabel("Hello")
+
+ax[0,1].scatter(x,y2)
+ax[1,0].bar(x,y1)
+ax[1,1].barh(x,y1)
+
+# COMMAND ----------
+
+x = np.arange(0, 4*np.pi, 0.05)
+ycos = np.cos(x)
+ysin = np.sin(x)
+
+fig, ax = plt.subplots()
+ax.plot(x,ycos, 'b-', label="cos(x)")   # b = blue and - = solid line
+ax.plot(x,ysin, 'r--', label="sin(x)")  # r = red and -- = dashed line    
+
+ax.set_title("Trigonometric functions")
+ax.set_xlabel("0 to 4pi")
+ax.set_ylabel("cos(x) and sin(x)")
+ax.legend()
+
+# COMMAND ----------
+
+#Helpful line examples
+fig, ax = plt.subplots(1,2)
+
+ax[0].axhline(0.3, color='red')
+ax[0].axhline(0.4, linestyle='--', color='blue')
+ax[0].axhline(0.5, color='cyan', linewidth=10)
+ax[0].axhline(0.6, linestyle=':', xmin=0.25, xmax=0.75, color='orchid')
+                                               #red, green, blue, transparent
+ax[0].axhline(0.7, xmin=0.25, xmax=0.75, color=(0.1, 0.2, 0.5, 0.3))
+
+
+ax[1].axvline(0.3, color='red')
+ax[1].axvline(0.4, linestyle='--', color='blue')
+ax[1].axvline(0.5, color='cyan', linewidth=10)
+ax[1].axvline(0.6, linestyle=':', ymin=0.25, ymax=0.75, color='orchid')
+                                               #red, green, blue, transparent
+ax[1].axvline(0.7, ymin=0.25, ymax=0.75, color=(0.1, 0.2, 0.5, 0.3))
