@@ -489,4 +489,52 @@ for i in range(len(StudentA)):
 
 # COMMAND ----------
 
+#Graph Task 1
+
+import pandas as pd
+import matplotlib.pyplot as plt  
+
+df = pd.read_csv("/dbfs/FileStore/Company Data/company_sales_data.csv")
+
+#Random name = df[name from excel data column].tolist()
+profitList = df['total_profit'].tolist()
+
+#Random name = df[name from excel data column].tolist()
+monthList  = df['month_number'].tolist()
+
+        #x axis data, y axis data, label = name of graph line
+plt.plot(monthList, profitList, label = 'Month-wise Profit data of last year')
+plt.xlabel('Month Number')
+plt.ylabel('Profit in Dollar ($)')
+plt.xticks(monthList)
+plt.title('Company profit per month')
+plt.yticks([100000, 200000, 300000, 400000, 500000])
+plt.show() #Hides Data
+
+
+# COMMAND ----------
+
+#Graph Task 2
+
+import pandas as pd
+import matplotlib.pyplot as plt  
+
+df = pd.read_csv("/dbfs/FileStore/Company Data/company_sales_data.csv")
+
+#Random name = df[name from excel data column].tolist()
+profitList = df['total_profit'].tolist()
+
+#Random name = df[name from excel data column].tolist()
+monthList  = df['month_number'].tolist()
+
+        #x axis data, y axis data, label = name of graph line
+plt.plot(monthList, profitList, label = 'Month-wise Profit data of last year', color ='r', marker ='o', markerfacecolor ='k', linestyle ='--', linewidth = '3')
+plt.xlabel('Month Number')
+plt.ylabel('Profit in Dollar ($)')
+plt.xticks(monthList)
+plt.title('Company profit per month')
+plt.yticks([100000, 200000, 300000, 400000, 500000])
+plt.legend(loc='lower right')
+plt.show() #Hides Data
+
 
