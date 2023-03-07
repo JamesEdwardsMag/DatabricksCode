@@ -538,3 +538,64 @@ plt.legend(loc='lower right')
 plt.show() #Hides Data
 
 
+
+# COMMAND ----------
+
+import pandas as pd
+import matplotlib.pyplot as plt  
+
+df = pd.read_csv("/dbfs/FileStore/Company Data/company_sales_data.csv")
+
+print(df)
+
+
+# COMMAND ----------
+
+import pandas as pd
+import matplotlib.pyplot as plt  
+
+df = pd.read_csv("/dbfs/FileStore/Company Data/company_sales_data.csv")
+
+monthList  = df['month_number'].tolist()
+facecream = df['facecream'].tolist()
+facewash  = df['facewash'].tolist()
+toothpaste  = df['toothpaste'].tolist()
+bathingsoap  = df['bathingsoap'].tolist()
+shampoo  = df['shampoo'].tolist()
+moisturizer  = df['moisturizer'].tolist()
+
+
+        #x axis data, y axis data, label = name of graph line
+plt.plot(monthList, facecream, label = 'Face Cream Sale Data', color ='b', marker ='o', markerfacecolor ='b', linestyle ='-', linewidth = '3')
+plt.plot(monthList, facewash, label = 'Face Wash Sale Data', color ='orange', marker ='o', markerfacecolor ='orange', linestyle ='-', linewidth = '3')
+plt.plot(monthList, toothpaste, label = 'Tooth Paste Sale Data', color ='g', marker ='o', markerfacecolor ='g', linestyle ='-', linewidth = '3')
+plt.plot(monthList, bathingsoap, label = 'Bathing Soap Sale Data', color ='r', marker ='o', markerfacecolor ='r', linestyle ='-', linewidth = '3')
+plt.plot(monthList, shampoo, label = 'Shampoo Sale Data', color ='purple', marker ='o', markerfacecolor ='purple', linestyle ='-', linewidth = '3')
+plt.plot(monthList, moisturizer, label = 'Moisturizer Sale Data', color ='brown', marker ='o', markerfacecolor ='brown', linestyle ='-', linewidth = '3')
+plt.xlabel('Month Number')
+plt.ylabel('Sales units in number')
+plt.xticks(monthList)
+plt.title('Company profit per month')
+plt.yticks([1000, 2000, 4000, 6000, 8000, 10000, 12000, 15000, 18000])
+plt.legend(loc='upper left')
+plt.show() #Hides Data
+
+
+# COMMAND ----------
+
+import pandas as pd
+import matplotlib.pyplot as plt  
+
+df = pd.read_csv("/dbfs/FileStore/Company Data/company_sales_data.csv")
+
+monthList  = df['month_number'].tolist()
+toothpaste  = df['toothpaste'].tolist()
+
+plt.scatter(monthList, toothpaste, label = 'Tooth Paste Sale Data')
+plt.xlabel('Month Number')
+plt.ylabel('Number of Units Sold')
+plt.xticks(monthList)
+plt.title('Company profit per month')
+plt.legend(loc='upper left')
+plt.grid(True, linewidth=1, linestyle="--")
+plt.show() #Hides Data
